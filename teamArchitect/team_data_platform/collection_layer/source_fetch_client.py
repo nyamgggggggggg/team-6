@@ -36,7 +36,6 @@ class HttpSourceFetchClient:
         timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,
         api_key: str = "",
     ) -> None:
-        # 후행 슬래시 제거해서 URL 조합 시 이중 슬래시 방지
         self._base_urls: dict[str, str] = {
             system: url.rstrip("/")
             for system, url in source_fetch_urls.items()
