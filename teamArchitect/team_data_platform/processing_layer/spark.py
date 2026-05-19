@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
-from ..collection_layer.knox import KnoxSourceService
+from ..collection_layer.source_fetch_client import SourceFetchClient
 from ..foundation_layer.models import ChangeEvent, utcnow_iso
 from ..storage_layer.catalog import IcebergCatalogRepository
 from ..storage_layer.lake import S3DataLakeRepository
@@ -22,18 +22,16 @@ class SparkProcessResult:
 
 
 class SparkPipeline:
-    """Processing component that pulls source records and materializes lake views."""
-
     def __init__(
         self,
-        knox_service: KnoxSourceService,
+        source_fetch_client: SourceFetchClient,
         data_lake: S3DataLakeRepository,
         iceberg_catalog: IcebergCatalogRepository,
         standardization_service: StandardizationService,
         deidentification_service: DeidentificationService,
         projection_builder: ProjectionBuilder,
     ) -> None:
-        self.knox_service = knox_service
+        self.source_fetch_client = source_fetch_client
         self.data_lake = data_lake
         self.iceberg_catalog = iceberg_catalog
         self.standardization_service = standardization_service
@@ -124,9 +122,9 @@ class SparkPipeline:
         )
 
     def _resolve_source_payload(self, event: ChangeEvent) -> tuple[dict[str, Any], str]:
-        pulled_payload = self.knox_service.pull_record(event.source_system, event.record_id)
-        if pulled_payload is not None:
-            return pulled_payload, "knox-pull"
+        fetched = self.source_fetch_client.fetch_record(event.source_system, event.record_id)
+        if fetched is not None:
+            return fetched, "source-api-pull"
         return dict(event.payload), "event-payload"
 
 class SparkSqlService:

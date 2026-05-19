@@ -3,12 +3,15 @@
 from .ingestion import IngestionService
 from .knox import KnoxSourceService
 from .queues import InboundQueue, OutboundQueue
+from .source_fetch_client import HttpSourceFetchClient, SourceFetchClient
 from .source_publisher import SourceEventPublisherService
 
 __all__ = [
     "InboundQueue",
     "OutboundQueue",
     "KnoxSourceService",
+    "SourceFetchClient",
+    "HttpSourceFetchClient",
     "SourceEventPublisherService",
     "IngestionService",
 ]

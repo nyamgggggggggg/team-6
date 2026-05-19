@@ -6,6 +6,7 @@ from pathlib import Path
 from ..collection_layer.ingestion import IngestionService
 from ..collection_layer.knox import KnoxSourceService
 from ..collection_layer.queues import InboundQueue, OutboundQueue
+from ..collection_layer.source_fetch_client import HttpSourceFetchClient, SourceFetchClient
 from ..collection_layer.source_publisher import SourceEventPublisherService
 from ..entry_gateway_layer.auth import GatewayAuthService
 from ..processing_layer.deidentification import DeidentificationService
@@ -32,6 +33,7 @@ class Application:
     config: PlatformConfig
     auth_service: GatewayAuthService
     knox_service: KnoxSourceService
+    source_fetch_client: SourceFetchClient
     source_publisher_service: SourceEventPublisherService
     spark_pipeline: SparkPipeline
     spark_streaming_service: SparkStreamingService
@@ -61,8 +63,15 @@ def build_application(base_dir: Path | None = None) -> Application:
     projection_builder = ProjectionBuilder()
     adapter_registry = ConsumerAdapterRegistry.from_yaml()
     access_policy_service = AccessPolicyService(adapter_registry)
+
+    source_fetch_client: SourceFetchClient = HttpSourceFetchClient(
+        source_fetch_urls=config.source_fetch_urls,
+        timeout_seconds=config.source_fetch_timeout_seconds,
+        api_key=config.source_fetch_api_key,
+    )
+
     spark_pipeline = SparkPipeline(
-        knox_service=knox_service,
+        source_fetch_client=source_fetch_client,
         data_lake=data_lake,
         iceberg_catalog=iceberg_catalog,
         standardization_service=standardization_service,
@@ -89,6 +98,7 @@ def build_application(base_dir: Path | None = None) -> Application:
         config=config,
         auth_service=GatewayAuthService(config, adapter_registry),
         knox_service=knox_service,
+        source_fetch_client=source_fetch_client,
         source_publisher_service=source_publisher_service,
         spark_pipeline=spark_pipeline,
         spark_streaming_service=spark_streaming_service,
@@ -100,5 +110,6 @@ def build_application(base_dir: Path | None = None) -> Application:
         iceberg_catalog=iceberg_catalog,
         data_lake=data_lake,
     )
+
 
 

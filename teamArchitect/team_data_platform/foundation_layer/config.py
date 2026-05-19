@@ -122,6 +122,20 @@ class PlatformConfig:
             "board": "source-board-key",
         }
     )
+    source_fetch_urls: dict[str, str] = field(
+        default_factory=lambda: {
+            "mail":     os.environ.get("TEAM_PLATFORM_SOURCE_FETCH_URL_MAIL",     "http://mail-service:8000"),
+            "schedule": os.environ.get("TEAM_PLATFORM_SOURCE_FETCH_URL_SCHEDULE", "http://schedule-service:8001"),
+            "payment":  os.environ.get("TEAM_PLATFORM_SOURCE_FETCH_URL_PAYMENT",  "http://payment-service:8002"),
+            "board":    os.environ.get("TEAM_PLATFORM_SOURCE_FETCH_URL_BOARD",    "http://board-service:8003"),
+        }
+    )
+    source_fetch_timeout_seconds: int = field(
+        default_factory=lambda: _env_int("TEAM_PLATFORM_SOURCE_FETCH_TIMEOUT_SECONDS", 10)
+    )
+    source_fetch_api_key: str = field(
+        default_factory=lambda: os.environ.get("TEAM_PLATFORM_SOURCE_FETCH_API_KEY", "").strip()
+    )
     consumer_keys: dict[str, str] = field(
         default_factory=lambda: {
             "search": "consumer-search-key",
