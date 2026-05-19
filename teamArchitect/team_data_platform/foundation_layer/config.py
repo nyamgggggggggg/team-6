@@ -68,7 +68,7 @@ class PlatformConfig:
         )
     )
     kafka_poll_timeout_ms: int = field(
-        default_factory=lambda: _env_int("TEAM_PLATFORM_KAFKA_POLL_TIMEOUT_MS", 1200)
+        default_factory=lambda: _env_int("TEAM_PLATFORM_KAFKA_POLL_TIMEOUT_MS", 3000)
     )
     kafka_request_timeout_ms: int = field(
         default_factory=lambda: _env_int("TEAM_PLATFORM_KAFKA_REQUEST_TIMEOUT_MS", 10000)

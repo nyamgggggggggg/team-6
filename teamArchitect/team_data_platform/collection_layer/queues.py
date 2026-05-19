@@ -64,6 +64,7 @@ class KafkaQueue:
         kwargs: dict[str, Any] = {
             "bootstrap_servers": _bootstrap_servers(self.config.kafka_bootstrap_servers),
             "request_timeout_ms": self.config.kafka_request_timeout_ms,
+            "api_version": (3, 9, 0),
         }
 
         kwargs.update(self._security_kwargs())
@@ -77,6 +78,7 @@ class KafkaQueue:
             "enable_auto_commit": False,
             "request_timeout_ms": self.config.kafka_request_timeout_ms,
             "value_deserializer": lambda value: json.loads(value.decode("utf-8")),
+            "api_version": (3, 9, 0),
         }
 
         kwargs.update(self._security_kwargs())

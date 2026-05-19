@@ -97,12 +97,13 @@ class HttpSourceFetchClient:
             )
             raise
         except urllib.error.URLError as exc:
-            logger.error(
-                "[SourceFetchClient] Connection error fetching record_id=%r from %r: %s",
+            logger.warning(
+                "[SourceFetchClient] Connection error fetching record_id=%r from %r: %s; "
+                "falling back to event payload.",
                 record_id,
                 source_system,
                 exc,
             )
-            raise
+            return None
 
 
