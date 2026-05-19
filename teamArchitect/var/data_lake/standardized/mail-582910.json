@@ -1,0 +1,26 @@
+{
+  "record_id": "mail-582910",
+  "source_system": "mail",
+  "entity_type": "mail",
+  "version": 1,
+  "occurred_at": "2026-05-19T06:53:02Z",
+  "status": "OPEN",
+  "subject": "배송 지연 불만",
+  "body_text": "고객 이*연 (us***@example.com) 문의: 배송 지연 불만",
+  "attachment_text": "상세 내용: 배송 지연 불만",
+  "combined_text": "배송 지연 불만\n고객 이*연 (us***@example.com) 문의: 배송 지연 불만\n상세 내용: 배송 지연 불만",
+  "tags": [
+    "complaint",
+    "urgent"
+  ],
+  "metadata": {
+    "has_attachments": true,
+    "attachment_count": 1
+  },
+  "user_name_masked": "이*연",
+  "email_masked": "us***@example.com",
+  "phone_masked": "010****0234",
+  "user_name_token": "6368d589e29e33209dd1d901",
+  "email_token": "ea53029f48f7e2481d87d2a7",
+  "phone_token": "408e598ee84548890c657d0a"
+}

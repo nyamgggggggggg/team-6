@@ -1,0 +1,11 @@
+{
+  "record_id": "mail-558162",
+  "source_system": "mail",
+  "occurred_at": "2026-05-19T06:52:38Z",
+  "version": 1,
+  "subject": "서비스 장애 신고",
+  "preview": "고객 박*훈 (us***@example.com) 문의: 서비스 장애 신고",
+  "status": "OPEN",
+  "user_name_masked": "박*훈",
+  "phone_masked": "010****3999"
+}

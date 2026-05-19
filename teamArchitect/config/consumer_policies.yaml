@@ -1,0 +1,76 @@
+consumers:
+  search:
+    key: consumer-search-key
+    purposes:
+      - search
+    allowed_fields:
+      - record_id
+      - source_system
+      - occurred_at
+      - version
+      - subject
+      - preview
+      - body_text
+      - attachment_text
+      - user_name_masked
+      - status
+      - tags
+
+  mobile:
+    key: consumer-mobile-key
+    purposes:
+      - mobile
+    allowed_fields:
+      - record_id
+      - source_system
+      - occurred_at
+      - version
+      - subject
+      - preview
+      - status
+      - user_name_masked
+      - phone_masked
+
+  rag:
+    key: consumer-rag-key
+    purposes:
+      - rag
+    allowed_fields:
+      - record_id
+      - source_system
+      - occurred_at
+      - version
+      - subject
+      - context_text
+      - attachment_text
+      - user_name_masked
+      - tags
+
+  graph:
+    key: consumer-graph-key
+    purposes:
+      - graph
+    allowed_fields:
+      - record_id
+      - source_system
+      - occurred_at
+      - version
+      - graph_nodes
+      - graph_edges
+      - tags
+
+  analytics:
+    key: consumer-analytics-key
+    purposes:
+      - analytics
+    allowed_fields:
+      - record_id
+      - source_system
+      - occurred_at
+      - version
+      - status
+      - tags
+      - user_name_token
+      - email_token
+      - phone_token
+      - has_attachments

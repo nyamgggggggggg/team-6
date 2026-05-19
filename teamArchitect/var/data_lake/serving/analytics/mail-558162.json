@@ -1,0 +1,15 @@
+{
+  "record_id": "mail-558162",
+  "source_system": "mail",
+  "occurred_at": "2026-05-19T06:52:38Z",
+  "version": 1,
+  "status": "OPEN",
+  "tags": [
+    "complaint",
+    "urgent"
+  ],
+  "user_name_token": "e4b82665fcdc8168e940c524",
+  "email_token": "88f3656f5b5969e708284a32",
+  "phone_token": "c6b04be1917b9142709f6bec",
+  "has_attachments": true
+}

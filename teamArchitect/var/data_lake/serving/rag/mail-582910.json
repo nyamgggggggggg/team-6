@@ -1,0 +1,14 @@
+{
+  "record_id": "mail-582910",
+  "source_system": "mail",
+  "occurred_at": "2026-05-19T06:53:02Z",
+  "version": 1,
+  "subject": "배송 지연 불만",
+  "context_text": "배송 지연 불만\n고객 이*연 (us***@example.com) 문의: 배송 지연 불만\n상세 내용: 배송 지연 불만",
+  "attachment_text": "상세 내용: 배송 지연 불만",
+  "user_name_masked": "이*연",
+  "tags": [
+    "complaint",
+    "urgent"
+  ]
+}

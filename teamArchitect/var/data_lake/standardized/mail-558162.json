@@ -1,0 +1,26 @@
+{
+  "record_id": "mail-558162",
+  "source_system": "mail",
+  "entity_type": "mail",
+  "version": 1,
+  "occurred_at": "2026-05-19T06:52:38Z",
+  "status": "OPEN",
+  "subject": "서비스 장애 신고",
+  "body_text": "고객 박*훈 (us***@example.com) 문의: 서비스 장애 신고",
+  "attachment_text": "상세 내용: 서비스 장애 신고",
+  "combined_text": "서비스 장애 신고\n고객 박*훈 (us***@example.com) 문의: 서비스 장애 신고\n상세 내용: 서비스 장애 신고",
+  "tags": [
+    "complaint",
+    "urgent"
+  ],
+  "metadata": {
+    "has_attachments": true,
+    "attachment_count": 1
+  },
+  "user_name_masked": "박*훈",
+  "email_masked": "us***@example.com",
+  "phone_masked": "010****3999",
+  "user_name_token": "e4b82665fcdc8168e940c524",
+  "email_token": "88f3656f5b5969e708284a32",
+  "phone_token": "c6b04be1917b9142709f6bec"
+}

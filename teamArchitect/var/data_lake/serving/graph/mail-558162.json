@@ -1,0 +1,27 @@
+{
+  "record_id": "mail-558162",
+  "source_system": "mail",
+  "occurred_at": "2026-05-19T06:52:38Z",
+  "version": 1,
+  "graph_nodes": [
+    {
+      "type": "source_system",
+      "value": "mail"
+    },
+    {
+      "type": "status",
+      "value": "OPEN"
+    }
+  ],
+  "graph_edges": [
+    {
+      "from": "mail-558162",
+      "to": "mail",
+      "type": "generated_by"
+    }
+  ],
+  "tags": [
+    "complaint",
+    "urgent"
+  ]
+}

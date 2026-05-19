@@ -1,0 +1,15 @@
+{
+  "record_id": "mail-582910",
+  "source_system": "mail",
+  "entity_type": "mail",
+  "current_version": 1,
+  "serving_targets": [
+    "analytics",
+    "graph",
+    "mobile",
+    "rag",
+    "search"
+  ],
+  "source_mode": "knox-pull",
+  "catalog_updated_at": "2026-05-19T06:53:03+00:00"
+}

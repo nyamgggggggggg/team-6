@@ -1,0 +1,30 @@
+{
+  "event_id": "evt-mail-558162",
+  "source_system": "mail",
+  "entity_type": "mail",
+  "record_id": "mail-558162",
+  "operation": "UPSERT",
+  "version": 1,
+  "occurred_at": "2026-05-19T06:52:38Z",
+  "payload": {
+    "subject": "서비스 장애 신고",
+    "body_html": "<p>고객 박지훈 (user2@example.com) 문의: 서비스 장애 신고</p>",
+    "user_name": "박지훈",
+    "email": "user2@example.com",
+    "phone": "01084893999",
+    "status": "OPEN",
+    "tags": [
+      "complaint",
+      "urgent"
+    ],
+    "attachments": [
+      {
+        "filename": "detail.txt",
+        "text": "상세 내용: 서비스 장애 신고"
+      }
+    ]
+  },
+  "stored_at": "2026-05-19T06:52:38+00:00",
+  "deleted": false,
+  "source_mode": "knox-pull"
+}
