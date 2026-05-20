@@ -150,4 +150,6 @@ curl -X POST http://localhost:8080/api/v1/query/record ^
 
 ## 추가 구현 보강 필요
 
-- 데이터 암호화 적용 필요
+- 데이터 저장소 연결 필요 
+- 데이터 암호화 적용 필요 (암호화 방향 fix 안됨)
+- 운영 서비스별 endpoint 관리 방향
